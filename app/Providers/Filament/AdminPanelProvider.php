@@ -35,6 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->sidebarFullyCollapsibleOnDesktop()
             ->brandName('IGI Prudential Insurance Ltd.')
             // ->brandLogo(asset('images/logo.jpg'))
+            ->favicon(asset('favicon.png'))
             ->colors([
                 'primary' => Color::Red,
             ])
