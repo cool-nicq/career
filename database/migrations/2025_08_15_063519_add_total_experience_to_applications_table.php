@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('applications', function (Blueprint $table) {
-            $table->integer('total_experience')->nullable()->after('clearance_date');
+            $table->string('total_experience')->nullable()->after('clearance_date');
         });
     }
 
