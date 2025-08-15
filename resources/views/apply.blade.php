@@ -347,11 +347,10 @@
                             <label for="expectedSalary" class="form-label">Expected Salary (Per Month)</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-rupee-sign"></i></span>
-                                <input type="tel" class="form-control" id="expectedSalary" name="expectedSalary" required>
+                                <input type="tel" class="form-control" id="expectedSalary" name="expectedSalary">
                             </div>
                         </div>
                     </div>
-                    
                     <h4 class="form-section-title">Working Experiences</h4>
                     <p class="text-muted">Please list your most recent experience first.</p>
                     <div class="border rounded p-3 mb-4">
@@ -421,7 +420,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="totalExperience" class="form-label">Total years of experience</label>
-                                <input type="text" class="form-control disabled" id="totalExperience" name="totalExperience" disabled readonly>
+                                <input type="text" class="form-control disabled" id="totalExperience" name="totalExperience" readonly>
                             </div>
                         </div>
                     </div>

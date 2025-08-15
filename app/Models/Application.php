@@ -45,6 +45,7 @@ class Application extends Model
         'joining_date_type',
         'joining_date',
         'clearance_date',
+        'total_experience', // ADDED: The new field
         'cv_path',
         'cover_letter_path',
         'qualification_path',

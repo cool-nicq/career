@@ -75,6 +75,7 @@ class JobPortalController extends Controller
             'joinDateIn' => 'nullable|string|max:255',
             'joiningDate' => 'nullable|date',
             'clearanceDate' => 'nullable|date',
+            'totalExperience' => 'nullable|numeric', // ADDED: Validation for totalExperience
 
             // Attachments
             // 'cv_path' => 'required|file|mimes:pdf,doc,docx|max:6144',
@@ -172,6 +173,7 @@ class JobPortalController extends Controller
             'joining_date_type' => $request->joinDateIn,
             'joining_date' => $request->joiningDate,
             'clearance_date' => $request->clearanceDate,
+            'total_experience' => $request->totalExperience, // ADDED: Saving the new field
 
             'cv_path' => $cvPath,
             'cover_letter_path' => $coverLetterPath,
