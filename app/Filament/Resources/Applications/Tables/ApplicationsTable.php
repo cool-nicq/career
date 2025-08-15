@@ -61,6 +61,7 @@ class ApplicationsTable
                 // TextColumn::make('joining_date')
                 // ->date(),
                 // TextColumn::make('clearance_date')
+                TextColumn::make('total_experience'),
                 // ->date(),
                 TextColumn::make('cv_path')
                     ->label('CV')
