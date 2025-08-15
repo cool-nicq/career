@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Filament\Resources\Vacancies;
+
+use App\Filament\Resources\Vacancies\Pages\CreateVacancy;
+use App\Filament\Resources\Vacancies\Pages\EditVacancy;
+use App\Filament\Resources\Vacancies\Pages\ListVacancies;
+use App\Filament\Resources\Vacancies\Schemas\VacancyForm;
+use App\Filament\Resources\Vacancies\Tables\VacanciesTable;
+use App\Models\Vacancy;
+use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
+
+class VacancyResource extends Resource
+{
+    protected static ?string $model = Vacancy::class;
+
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?string $recordTitleAttribute = 'Job Posting';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Job Vacancy';
+
+    protected static ?int $navigationSort = 1;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'Total vacancies posted';
+    }
+
+    public static function form(Schema $schema): Schema
+    {
+        return VacancyForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return VacanciesTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+        ];
+    }
+
+    public static function getPages(): array
+    {
+        return [
+            'index' => ListVacancies::route('/'),
+            'create' => CreateVacancy::route('/create'),
+            'edit' => EditVacancy::route('/{record}/edit'),
+        ];
+    }
+}
